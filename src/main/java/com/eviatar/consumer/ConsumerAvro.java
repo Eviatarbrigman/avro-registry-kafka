@@ -1,6 +1,6 @@
 package com.eviatar.consumer;
 
-import com.eviatar.dto.User;
+import com.eviatar.model.Employee;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.springframework.kafka.annotation.DltHandler;
@@ -22,10 +22,10 @@ public class ConsumerAvro {
     //    @KafkaListener(topics = "${topic.name}")
     @RetryableTopic(attempts = "4", backoff = @Backoff(delay = 3000, multiplier = 2, maxDelay = 15000), exclude = {NullPointerException.class})
     @KafkaListener(topics = topic, groupId = "avro-group")
-    public void getMessage(ConsumerRecord<String, User> consumerRecord) {
+    public void getMessage(ConsumerRecord<String, Employee> consumerRecord) {
         try {
             String key = consumerRecord.key();
-            User value = consumerRecord.value();
+            Employee value = consumerRecord.value();
             log.info("key" + key + "and value " + value);
 
             List<Long> banedIdList = Stream.of(1234L, 4321L).toList();
@@ -39,7 +39,7 @@ public class ConsumerAvro {
     }
 
     @DltHandler
-    public void retryTopic(ConsumerRecord<String, User> consumerRecord) {
+    public void retryTopic(ConsumerRecord<String, Employee> consumerRecord) {
 
         log.info("the issue is with topic : {} ,offset : {} and id : {}", consumerRecord.topic(), consumerRecord.offset(), consumerRecord.value().getId());
 

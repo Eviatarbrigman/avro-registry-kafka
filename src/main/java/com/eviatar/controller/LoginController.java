@@ -13,16 +13,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("data")
-public class KafkaAvroController {
+@RequestMapping("login")
+public class LoginController {
 
     @Autowired
-    private ProducerAvro producerAvro;
+    private AuthenticationService authenticationService;
 
-    @PostMapping("/send")
-    public String sendMessage(@RequestBody Employee employee){
-        producerAvro.sendUser(employee);
-        return "message received";
+    @PostMapping("/register")
+    public ResponseEntity<AuthenticationResponse> register (@RequestBody User user){
+        return ResponseEntity.ok(authenticationService.register(user));
     }
+
+    @PostMapping("/login")
+    public ResponseEntity<AuthenticationResponse> login (@RequestBody User user){
+        return ResponseEntity.ok(authenticationService.login(user));
+    }
+
 
 }

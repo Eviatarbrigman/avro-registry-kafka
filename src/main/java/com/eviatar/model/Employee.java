@@ -1,4 +1,4 @@
-package com.eviatar.dto;
+package com.eviatar.model;
 
 import org.apache.avro.specific.SpecificData;
 import org.apache.avro.message.BinaryMessageEncoder;
@@ -7,23 +7,23 @@ import org.apache.avro.message.SchemaStore;
 
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
-public class User extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
+public class Employee extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = -7210966474979868131L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"User\",\"namespace\":\"com.eviatar.dto\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"firstName\",\"type\":\"string\"},{\"name\":\"middleName\",\"type\":\"string\",\"default\":\"\"},{\"name\":\"lastName\",\"type\":\"string\"},{\"name\":\"emailId\",\"type\":\"string\",\"default\":\"\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Employee\",\"namespace\":\"com.eviatar.model\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"firstName\",\"type\":\"string\"},{\"name\":\"middleName\",\"type\":\"string\",\"default\":\"\"},{\"name\":\"lastName\",\"type\":\"string\"},{\"name\":\"emailId\",\"type\":\"string\",\"default\":\"\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
 
-  private static final BinaryMessageEncoder<User> ENCODER =
-      new BinaryMessageEncoder<User>(MODEL$, SCHEMA$);
+  private static final BinaryMessageEncoder<Employee> ENCODER =
+      new BinaryMessageEncoder<Employee>(MODEL$, SCHEMA$);
 
-  private static final BinaryMessageDecoder<User> DECODER =
-      new BinaryMessageDecoder<User>(MODEL$, SCHEMA$);
+  private static final BinaryMessageDecoder<Employee> DECODER =
+      new BinaryMessageDecoder<Employee>(MODEL$, SCHEMA$);
 
   /**
    * Return the BinaryMessageDecoder instance used by this class.
    */
-  public static BinaryMessageDecoder<User> getDecoder() {
+  public static BinaryMessageDecoder<Employee> getDecoder() {
     return DECODER;
   }
 
@@ -31,17 +31,17 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
    * Create a new BinaryMessageDecoder instance for this class that uses the specified {@link SchemaStore}.
    * @param resolver a {@link SchemaStore} used to find schemas by fingerprint
    */
-  public static BinaryMessageDecoder<User> createDecoder(SchemaStore resolver) {
-    return new BinaryMessageDecoder<User>(MODEL$, SCHEMA$, resolver);
+  public static BinaryMessageDecoder<Employee> createDecoder(SchemaStore resolver) {
+    return new BinaryMessageDecoder<Employee>(MODEL$, SCHEMA$, resolver);
   }
 
-  /** Serializes this User to a ByteBuffer. */
+  /** Serializes this Employee to a ByteBuffer. */
   public java.nio.ByteBuffer toByteBuffer() throws java.io.IOException {
     return ENCODER.encode(this);
   }
 
-  /** Deserializes a User from a ByteBuffer. */
-  public static User fromByteBuffer(
+  /** Deserializes a Employee from a ByteBuffer. */
+  public static Employee fromByteBuffer(
       java.nio.ByteBuffer b) throws java.io.IOException {
     return DECODER.decode(b);
   }
@@ -57,7 +57,7 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
    * to their default values from the schema.  If that is desired then
    * one should use <code>newBuilder()</code>.
    */
-  public User() {}
+  public Employee() {}
 
   /**
    * All-args constructor.
@@ -67,7 +67,7 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
    * @param lastName The new value for lastName
    * @param emailId The new value for emailId
    */
-  public User(java.lang.CharSequence id, java.lang.CharSequence firstName, java.lang.CharSequence middleName, java.lang.CharSequence lastName, java.lang.CharSequence emailId) {
+  public Employee(java.lang.CharSequence id, java.lang.CharSequence firstName, java.lang.CharSequence middleName, java.lang.CharSequence lastName, java.lang.CharSequence emailId) {
     this.id = id;
     this.firstName = firstName;
     this.middleName = middleName;
@@ -182,36 +182,36 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
   }
 
   /**
-   * Creates a new User RecordBuilder.
-   * @return A new User RecordBuilder
+   * Creates a new Employee RecordBuilder.
+   * @return A new Employee RecordBuilder
    */
-  public static com.eviatar.dto.User.Builder newBuilder() {
-    return new com.eviatar.dto.User.Builder();
+  public static Employee.Builder newBuilder() {
+    return new Employee.Builder();
   }
 
   /**
-   * Creates a new User RecordBuilder by copying an existing Builder.
+   * Creates a new Employee RecordBuilder by copying an existing Builder.
    * @param other The existing builder to copy.
-   * @return A new User RecordBuilder
+   * @return A new Employee RecordBuilder
    */
-  public static com.eviatar.dto.User.Builder newBuilder(com.eviatar.dto.User.Builder other) {
-    return new com.eviatar.dto.User.Builder(other);
+  public static Employee.Builder newBuilder(Employee.Builder other) {
+    return new Employee.Builder(other);
   }
 
   /**
-   * Creates a new User RecordBuilder by copying an existing User instance.
+   * Creates a new Employee RecordBuilder by copying an existing Employee instance.
    * @param other The existing instance to copy.
-   * @return A new User RecordBuilder
+   * @return A new Employee RecordBuilder
    */
-  public static com.eviatar.dto.User.Builder newBuilder(com.eviatar.dto.User other) {
-    return new com.eviatar.dto.User.Builder(other);
+  public static Employee.Builder newBuilder(Employee other) {
+    return new Employee.Builder(other);
   }
 
   /**
-   * RecordBuilder for User instances.
+   * RecordBuilder for Employee instances.
    */
-  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<User>
-    implements org.apache.avro.data.RecordBuilder<User> {
+  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<Employee>
+    implements org.apache.avro.data.RecordBuilder<Employee> {
 
     private java.lang.CharSequence id;
     private java.lang.CharSequence firstName;
@@ -228,7 +228,7 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(com.eviatar.dto.User.Builder other) {
+    private Builder(Employee.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
@@ -253,10 +253,10 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
     }
 
     /**
-     * Creates a Builder by copying an existing User instance
+     * Creates a Builder by copying an existing Employee instance
      * @param other The existing instance to copy.
      */
-    private Builder(com.eviatar.dto.User other) {
+    private Builder(Employee other) {
             super(SCHEMA$);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
@@ -293,7 +293,7 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
       * @param value The value of 'id'.
       * @return This builder.
       */
-    public com.eviatar.dto.User.Builder setId(java.lang.CharSequence value) {
+    public Employee.Builder setId(java.lang.CharSequence value) {
       validate(fields()[0], value);
       this.id = value;
       fieldSetFlags()[0] = true;
@@ -313,7 +313,7 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
       * Clears the value of the 'id' field.
       * @return This builder.
       */
-    public com.eviatar.dto.User.Builder clearId() {
+    public Employee.Builder clearId() {
       id = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -332,7 +332,7 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
       * @param value The value of 'firstName'.
       * @return This builder.
       */
-    public com.eviatar.dto.User.Builder setFirstName(java.lang.CharSequence value) {
+    public Employee.Builder setFirstName(java.lang.CharSequence value) {
       validate(fields()[1], value);
       this.firstName = value;
       fieldSetFlags()[1] = true;
@@ -352,7 +352,7 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
       * Clears the value of the 'firstName' field.
       * @return This builder.
       */
-    public com.eviatar.dto.User.Builder clearFirstName() {
+    public Employee.Builder clearFirstName() {
       firstName = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -371,7 +371,7 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
       * @param value The value of 'middleName'.
       * @return This builder.
       */
-    public com.eviatar.dto.User.Builder setMiddleName(java.lang.CharSequence value) {
+    public Employee.Builder setMiddleName(java.lang.CharSequence value) {
       validate(fields()[2], value);
       this.middleName = value;
       fieldSetFlags()[2] = true;
@@ -391,7 +391,7 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
       * Clears the value of the 'middleName' field.
       * @return This builder.
       */
-    public com.eviatar.dto.User.Builder clearMiddleName() {
+    public Employee.Builder clearMiddleName() {
       middleName = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -410,7 +410,7 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
       * @param value The value of 'lastName'.
       * @return This builder.
       */
-    public com.eviatar.dto.User.Builder setLastName(java.lang.CharSequence value) {
+    public Employee.Builder setLastName(java.lang.CharSequence value) {
       validate(fields()[3], value);
       this.lastName = value;
       fieldSetFlags()[3] = true;
@@ -430,7 +430,7 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
       * Clears the value of the 'lastName' field.
       * @return This builder.
       */
-    public com.eviatar.dto.User.Builder clearLastName() {
+    public Employee.Builder clearLastName() {
       lastName = null;
       fieldSetFlags()[3] = false;
       return this;
@@ -449,7 +449,7 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
       * @param value The value of 'emailId'.
       * @return This builder.
       */
-    public com.eviatar.dto.User.Builder setEmailId(java.lang.CharSequence value) {
+    public Employee.Builder setEmailId(java.lang.CharSequence value) {
       validate(fields()[4], value);
       this.emailId = value;
       fieldSetFlags()[4] = true;
@@ -469,7 +469,7 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
       * Clears the value of the 'emailId' field.
       * @return This builder.
       */
-    public com.eviatar.dto.User.Builder clearEmailId() {
+    public Employee.Builder clearEmailId() {
       emailId = null;
       fieldSetFlags()[4] = false;
       return this;
@@ -477,9 +477,9 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
 
     @Override
     @SuppressWarnings("unchecked")
-    public User build() {
+    public Employee build() {
       try {
-        User record = new User();
+        Employee record = new Employee();
         record.id = fieldSetFlags()[0] ? this.id : (java.lang.CharSequence) defaultValue(fields()[0]);
         record.firstName = fieldSetFlags()[1] ? this.firstName : (java.lang.CharSequence) defaultValue(fields()[1]);
         record.middleName = fieldSetFlags()[2] ? this.middleName : (java.lang.CharSequence) defaultValue(fields()[2]);
@@ -493,8 +493,8 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
   }
 
   @SuppressWarnings("unchecked")
-  private static final org.apache.avro.io.DatumWriter<User>
-    WRITER$ = (org.apache.avro.io.DatumWriter<User>)MODEL$.createDatumWriter(SCHEMA$);
+  private static final org.apache.avro.io.DatumWriter<Employee>
+    WRITER$ = (org.apache.avro.io.DatumWriter<Employee>)MODEL$.createDatumWriter(SCHEMA$);
 
   @Override public void writeExternal(java.io.ObjectOutput out)
     throws java.io.IOException {
@@ -502,8 +502,8 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
   }
 
   @SuppressWarnings("unchecked")
-  private static final org.apache.avro.io.DatumReader<User>
-    READER$ = (org.apache.avro.io.DatumReader<User>)MODEL$.createDatumReader(SCHEMA$);
+  private static final org.apache.avro.io.DatumReader<Employee>
+    READER$ = (org.apache.avro.io.DatumReader<Employee>)MODEL$.createDatumReader(SCHEMA$);
 
   @Override public void readExternal(java.io.ObjectInput in)
     throws java.io.IOException {
