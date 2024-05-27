@@ -43,7 +43,7 @@ public class JwtService {
         return (getUserName(token).equals(userDetails.getUsername()) && !isTokenExpierd(token));
     }
 
-    public String generateKey(User user) {
+    public String generateToken(User user) {
         return Jwts
                 .builder()
                 .subject(user.getUsername())
