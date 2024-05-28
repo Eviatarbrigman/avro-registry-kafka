@@ -22,7 +22,12 @@ public class KafkaAvroController {
         return "message received";
     }
     @PostMapping("/checkLogin")
-    public String sendMessage(@RequestBody User user){
+    public String checkLogin(@RequestBody User user){
         return "all good";
+    }
+
+    @PostMapping("/admin")
+    public String adminLogin(@RequestBody User user){
+        return "you are an admin";
     }
 }
