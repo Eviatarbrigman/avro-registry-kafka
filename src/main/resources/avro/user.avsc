@@ -1,7 +1,7 @@
 {
-  "namespace": "com.eviatar.dto",
+  "namespace": "com.eviatar.model",
   "type": "record",
-  "name": "User",
+  "name": "Employee",
   "fields": [
     {
       "name": "id",
